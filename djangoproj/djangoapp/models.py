@@ -12,3 +12,13 @@ class School(models.Model):
     school = models.CharField(max_length=30)
     student_id = models.IntegerField()
     certificate_studentship = models.FileField()
+
+class Team(models.Model):
+    name = models.CharField(max_length=30)
+    adress = models.CharField(max_length=30)
+    nickname = models.CharField(max_length=30)
+    fav_food = models.CharField(max_length=30)
+    hobby = models.CharField(max_length=30)
+
+    
+    
