@@ -1,3 +1,69 @@
 {% load static %}
 
-<h1>Hello world!</h1>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리팀을 소개합니다</title>
+
+    <style>
+        body{
+            text-align: center;
+            border:2px dashed black;
+            
+        }
+        .top{
+            
+        }
+        .container{
+            background-color: rgb(221, 221, 221);
+            border-top:2px dashed black;
+            border-bottom:2px dashed black;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .item{
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            margin: 10px;
+            
+            border-radius: 30px;
+        }
+        .bottom{
+
+        }
+    </style>
+
+    
+</head>
+<body>
+    
+    <div class = "top">
+        <h1>TEAM PROJECT</h1> 
+    </div>
+    
+    <div class = "container">
+    {% for team in team %}
+        <div class = "item">
+            <h3>{{team.name}}</h3>
+	        <p>별명: {{team.nickname}}</p>
+	        <p>사는곳: {{team.adress}}</p>
+            <p>좋아하는 음식: {{team.fav_food}}</p>
+            <p>취미: {{team.hobby}}</p>
+        </div>
+	    
+
+    {% endfor %}
+    </div>
+
+    <div class="bottom">
+        <h3>6주차 디벨롭데이</h3>
+        <p>2021.05.12</p>
+    </div>
+
+</body>
+</html>
