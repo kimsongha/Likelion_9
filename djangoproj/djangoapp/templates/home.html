@@ -12,15 +12,26 @@
         body{
             text-align: center;
             border:2px dashed black;
+            
         }
-
         .top{
             
         }
         .container{
-            background-color: rgb(231, 231, 231);
+            background-color: rgb(221, 221, 221);
             border-top:2px dashed black;
             border-bottom:2px dashed black;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .item{
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            margin: 10px;
+            
+            border-radius: 30px;
         }
         .bottom{
 
@@ -30,37 +41,28 @@
     
 </head>
 <body>
-
+    
     <div class = "top">
         <h1>TEAM PROJECT</h1> 
     </div>
     
     <div class = "container">
-    <!-- views.py 에서 보낸 오브젝트를 사용가능 -->
     {% for team in team %}
-
-	    <h3>{{team.name}}</h3>
-	    <p>별명: {{team.nickname}}</p>
-	    <p>사는곳: {{team.adress}}</p>
-        <p>좋아하는 음식: {{team.fav_food}}</p>
-        <p>취미: {{team.hobby}}</p>
-        <p>----</p>
+        <div class = "item">
+            <h3>{{team.name}}</h3>
+	        <p>별명: {{team.nickname}}</p>
+	        <p>사는곳: {{team.adress}}</p>
+            <p>좋아하는 음식: {{team.fav_food}}</p>
+            <p>취미: {{team.hobby}}</p>
+        </div>
+	    
 
     {% endfor %}
     </div>
 
     <div class="bottom">
         <h3>6주차 디벨롭데이</h3>
-        <h4>-미션-</h4>
-        <p>
-            세션데이때 만든 Blog Table이 아닌,<br>
-
-            디벨롭데이 팀원에 관한 데이터를 저장하는 Table을 만들고,<br>
-            테이블을 구성하는 데이터 필드를 등록해보세요!<br>
-            (나이, 생일, 별명, 소개, MBTI, 쉬는시간에 뭐하나 등... 자유롭게)<br><br>
-            Admin 패널에서 데이터를 등록하여, HTML에 띄우는 것이 미션!<br>
-            또한 디벨롭데이의 결과물을 본인의 GitHub에 push 해주세요!
-        </p>
+        <p>2021.05.12</p>
     </div>
 
 </body>
